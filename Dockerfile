@@ -3,6 +3,7 @@ RUN apt-get update && apt-get clean && apt-get install -y python3-minimal python
 RUN pip3 install wheel
 RUN apt-get install -y openjdk-8-jdk
 
-RUN python3 -m pip install allennlp==0.8.4
-RUN python3 -m pip install tqdm wrapt spacy==2.1.7 werkzeug flask
+RUN python3 -m pip install tqdm wrapt werkzeug flask
+RUN python3 -m pip --no-cache-dir install allennlp==0.8.4
+RUN python3 -m pip install spacy==2.1.7
 RUN python3 -m spacy download en_core_web_sm
